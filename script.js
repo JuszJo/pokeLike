@@ -44,9 +44,34 @@ tile.makeCollisionMap();
 
 tile.update();
 
+const character1 = {
+    x: 0,
+    y: 20,
+    framesX: 12,
+    framesY: 8,
+    currentFrameX: 1,
+    currentFrameY: 0,
+    idleState: 1
+}
+
+const character2 = {
+    x: 0,
+    y: 20,
+    framesX: 12,
+    framesY: 8,
+    currentFrameX: 4,
+    currentFrameY: 0,
+    idleState: 4
+}
+
 if(loaded.length == 3) {
-    var player = new Player(playerSprite, 624 / 4, 576 / 2, 0, 20, 52, 72, 3, 4, 1, 0, 1, 1, offset);
-    // var player2 = new Player(playerSprite, 624 / 4, 576 / 2, 0, 20, 52, 72, 3, 4, 4, 0, 4, 1, offset);
+    var player = new Player(
+        playerSprite, 
+        character1.x, character1.y, 
+        character1.framesX, character1.framesY, 
+        character1.currentFrameX, character1.currentFrameY, 
+        offset, character1.idleState
+        );
 
     window.requestAnimationFrame(update);
 }
